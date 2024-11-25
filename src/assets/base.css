@@ -8,3 +8,7 @@
   @tailwind components;
   @tailwind utilities;
 }
+
+.dbg-border {
+  border: 1px solid red !important;
+}

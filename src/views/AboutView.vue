@@ -6,7 +6,7 @@ import Button from 'primevue/button';
     <h1>This is an about page</h1>
     <Button label="Submit" />
     <div style="background-color: var(--p-primary-color)">
-      <p class="text-white white-text">Hello world</p>
+      <p class="text-white white-text p-4">Hello world</p>
     </div>
   </div>
 </template>

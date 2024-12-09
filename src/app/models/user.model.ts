@@ -57,6 +57,10 @@ export default class User {
     )
   }
 
+  static initEmpty(): User {
+    return new User('', '', '', false, '', Person.initEmpty(), [], '', '')
+  }
+
   public isAdmin(): boolean {
     return this.roles.includes('ADMIN')
   }

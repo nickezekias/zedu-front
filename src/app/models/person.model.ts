@@ -69,4 +69,8 @@ export default class Person {
       data.phone,
     )
   }
+
+  static initEmpty(): Person {
+    return new Person('', 0, '', '', '', '', '', '', '', '', '', '')
+  }
 }

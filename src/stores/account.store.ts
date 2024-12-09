@@ -7,10 +7,10 @@ import type {
   RegisterRequest,
 } from '@/app/@types/account.interface'
 import type { Ref } from 'vue'
-import type User from '@/app/models/user.model'
+import User from '@/app/models/user.model'
 import { useRouter } from 'vue-router'
 
-export const useAuthStore = defineStore('auth', () => {
+export const useAccountStore = defineStore('auth', () => {
   const user: Ref<User | null> = ref(null)
   const router = useRouter()
 
@@ -46,7 +46,7 @@ export const useAuthStore = defineStore('auth', () => {
 
   async function getAuthenticatedUser() {
     const response = await accountService.getAuthenticatedUser()
-    setAuthenticatedUser(response.data.data as User)
+    setAuthenticatedUser(User.fromObject(response.data.data))
   }
 
   async function login(payload: LoginRequest) {

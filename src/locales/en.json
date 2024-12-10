@@ -17,6 +17,9 @@
     },
     "dashboard": {
       "welcome": "Welcome to the dashboard"
+    },
+    "errors": {
+      "404NotFound": "Oops! We can't find the page you're looking for."
     }
   },
 
@@ -31,6 +34,7 @@
     "female": "Female",
     "firstName": "First Name",
     "gender": "Gender",
+    "goHome": "Go Home",
     "lastName": "Last Name",
     "license": "License | Licenses",
     "login": "Login",

@@ -38,6 +38,11 @@ const router = createRouter({
         },
       ],
     },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'notFound',
+      component: () => import('@/app/features/errors/presentation/NotFoundView.vue'),
+    },
   ],
 })
 

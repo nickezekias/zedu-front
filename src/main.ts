@@ -12,6 +12,7 @@ import primevueConfig from './lib/primevue'
 import App from './App.vue'
 import router from './router'
 
+import Avatar from 'primevue/avatar'
 import Button from 'primevue/button'
 import ToastService from 'primevue/toastservice'
 
@@ -23,6 +24,7 @@ app.use(i18n)
 app.use(PrimeVue, primevueConfig)
 
 app.use(ToastService)
+app.component('PrimeAvatar', Avatar)
 app.component('PrimeButton', Button)
 
 app.mount('#app')

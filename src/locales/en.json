@@ -23,10 +23,14 @@
   "labels": {
     "abbreviation": "Abbreviation",
     "address": "Address",
+    "age": "Age",
+    "birthDate": "Birth Date",
+    "class": "Class | Classes",
     "dashboard": "Dashboard",
     "email": "Email",
     "female": "Female",
     "firstName": "First Name",
+    "gender": "Gender",
     "lastName": "Last Name",
     "license": "License | Licenses",
     "login": "Login",
@@ -36,11 +40,16 @@
     "next": "Next",
     "operationFailure": "Operation Failure",
     "operationSuccess": "Operation Success",
+    "paid": "Paid",
     "password": "Password",
     "passwordConfirm": "Confirm Password",
     "phone": "Phone",
     "previous": "Previous",
     "register": "Register",
-    "school": "School | Schools"
+    "school": "School | Schools",
+    "schoolFees": "School Fees",
+    "student": "Student | Students",
+    "studentId": "Student ID",
+    "unpaid": "Unpaid"
   }
 }

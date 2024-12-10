@@ -7,6 +7,8 @@ import Navbar from './NavBar.vue';
   <div>
     <Toast />
     <Navbar />
-    <RouterView class="p-2 md:p-4 pb-32 md:pb-2" />
+    <div class="p-2 md:p-4 mt-6 pb-32 md:pb-2">
+      <RouterView />
+    </div>
   </div>
 </template>

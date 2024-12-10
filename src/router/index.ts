@@ -29,6 +29,12 @@ const router = createRouter({
           component: () => import('@/app/features/dashboard/IndexView.vue'),
           meta: { middleware: [auth, admin] },
         },
+        {
+          path: '/students',
+          name: 'students.index',
+          component: () => import('@/app/features/student/presentation/IndexView.vue'),
+          meta: { middleware: [auth, admin] },
+        },
       ],
     },
   ],

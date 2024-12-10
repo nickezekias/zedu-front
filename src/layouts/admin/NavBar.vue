@@ -15,6 +15,10 @@ import UserAvatarMenu from '@/components/forms/user/UserAvatarMenu.vue';
       <router-link :to="{ name: 'dashboard' }" activeClass="border-b border-primary" class="hidden md:flex py-2">
         <PrimeButton text plain class="" :label="$t('labels.dashboard')" />
       </router-link>
+
+      <router-link :to="{ name: 'students.index' }" activeClass="border-b border-primary" class="hidden md:flex py-2">
+        <PrimeButton text plain class="" :label="$t('labels.student', 2)" />
+      </router-link>
     </template>
 
     <template #end>

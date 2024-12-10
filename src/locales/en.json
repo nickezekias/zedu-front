@@ -14,18 +14,23 @@
   "features": {
     "account": {
       "registerSuccessMessage": "Account created successfully"
+    },
+    "dashboard": {
+      "welcome": "Welcome to the dashboard"
     }
   },
 
   "labels": {
     "abbreviation": "Abbreviation",
     "address": "Address",
+    "dashboard": "Dashboard",
     "email": "Email",
     "female": "Female",
     "firstName": "First Name",
     "lastName": "Last Name",
     "license": "License | Licenses",
     "login": "Login",
+    "logout": "Logout",
     "male": "Male",
     "name": "Name",
     "next": "Next",

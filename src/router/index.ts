@@ -22,12 +22,12 @@ const router = createRouter({
     {
       path: '/',
       component: () => import('@/layouts/admin/IndexLayout.vue'),
-      meta: { middleware: [auth, admin] },
       children: [
         {
           path: 'dashboard',
           name: 'dashboard',
           component: () => import('@/app/features/dashboard/IndexView.vue'),
+          meta: { middleware: [auth, admin] },
         },
       ],
     },

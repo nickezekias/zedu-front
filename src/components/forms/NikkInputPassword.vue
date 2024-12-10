@@ -1,16 +1,17 @@
 <script setup lang="ts">
 import FloatLabel from 'primevue/floatlabel'
-import InputText from 'primevue/inputtext'
+import Password from 'primevue/password'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const model: any = defineModel()
+
 const props = defineProps<{
   id: string
   disabled?: boolean
   errorHelpLabel: string
   label: string
   readonly?: boolean
-  type: string
+  toggleMask: boolean
   isError: boolean
 }>()
 </script>
@@ -18,8 +19,8 @@ const props = defineProps<{
 <template>
   <div>
     <FloatLabel variant="on">
-      <InputText v-model="model" class="w-full p-3 border shadow-none" :disabled="props.disabled"
-        :invalid="props.isError" :id="props.id" :readonly="props.readonly" :type="type" />
+      <Password v-model="model" :disabled="props.disabled" :invalid="props.isError" :inputId="props.id"
+        :readonly="props.readonly" toggleMask fluid />
       <label :class="props.isError ? 'nikk-invalid' : ''" :for="props.id">{{ $t(`${props.label}`) }}</label>
     </FloatLabel>
     <small v-if="props.isError" :id="`${props.id}-help`" class="nikk-invalid">
@@ -27,3 +28,5 @@ const props = defineProps<{
     </small>
   </div>
 </template>
+
+<style scoped></style>

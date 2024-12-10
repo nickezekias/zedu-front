@@ -6,6 +6,7 @@
     <div class="container">
       <div class="error-code">404</div>
       <div class="message">{{ $t('features.errors.404NotFound') }}</div>
+      <!-- FIXME: redirect to dashboard or '/' if user is authenticated or not -->
       <router-link :to="{ name: 'dashboard' }">
         <PrimeButton class="home-btn" size="large" :label="$t('labels.goHome')" />
       </router-link>

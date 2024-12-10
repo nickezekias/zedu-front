@@ -1,1 +1,56 @@
 @import './base.css';
+
+@media (prefers-color-scheme: dark) {
+  .logo .z {
+    color: #f5f5f5;
+  }
+
+  .logo .edu {
+    color: #a8a8a8;
+  }
+
+  .logo .edu {
+    background: linear-gradient(145deg, #a8a8a8, #f5f5f5);
+  }
+}
+
+/* Logo Styles */
+.logo .z {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #121212;
+  background: linear-gradient(145deg, #000000, #505050);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+body.dark-mode .logo .z {
+  background: linear-gradient(145deg, #f5f5f5, #a8a8a8);
+}
+
+.logo .z:hover {
+  transform: scale(1.1);
+}
+
+.logo .edu {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #505050;
+  background: linear-gradient(145deg, #505050, #a8a8a8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+body.dark-mode .logo .edu {
+  background: linear-gradient(145deg, #a8a8a8, #f5f5f5);
+}
+
+.logo .edu:hover {
+  transform: scale(1.1);
+}

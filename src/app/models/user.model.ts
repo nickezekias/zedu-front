@@ -6,6 +6,7 @@ export default class User {
   emailVerifiedAt: string
   isActive: boolean
   licenseSchoolId: string
+  password?: string
   person: Person
   roles: Array<string>
   createdAt: string
@@ -17,6 +18,7 @@ export default class User {
     emailVerifiedAt: string,
     isActive: boolean,
     licenseSchoolId: string,
+    password: string,
     person: Person,
     roles: Array<string>,
     createdAt: string,
@@ -27,6 +29,7 @@ export default class User {
     this.emailVerifiedAt = emailVerifiedAt
     this.isActive = isActive
     this.licenseSchoolId = licenseSchoolId
+    this.password = password
     this.person = person
     this.roles = roles
     this.createdAt = createdAt
@@ -39,6 +42,7 @@ export default class User {
     emailVerifiedAt: string
     isActive: boolean
     licenseSchoolId: string
+    password: string
     person: Person
     roles: Array<string>
     createdAt: string
@@ -50,6 +54,7 @@ export default class User {
       data.emailVerifiedAt,
       data.isActive,
       data.licenseSchoolId,
+      data.password,
       Person.fromObject(data.person),
       data.roles,
       data.createdAt,
@@ -58,7 +63,7 @@ export default class User {
   }
 
   static initEmpty(): User {
-    return new User('', '', '', false, '', Person.initEmpty(), [], '', '')
+    return new User('', '', '', false, '', '', Person.initEmpty(), [], '', '')
   }
 
   public isAdmin(): boolean {

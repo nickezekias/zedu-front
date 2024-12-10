@@ -12,10 +12,17 @@ import primevueConfig from './lib/primevue'
 import App from './App.vue'
 import router from './router'
 
+import Button from 'primevue/button'
+import ToastService from 'primevue/toastservice'
+
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
 app.use(i18n)
 app.use(PrimeVue, primevueConfig)
+
+app.use(ToastService)
+app.component('PrimeButton', Button)
+
 app.mount('#app')

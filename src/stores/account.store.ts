@@ -9,10 +9,21 @@ import type {
 import type { Ref } from 'vue'
 import User from '@/app/models/user.model'
 import { useRouter } from 'vue-router'
+import Person from '@/app/models/person.model'
+import School from '@/app/models/school.model'
 
 export const useAccountStore = defineStore('auth', () => {
-  const user: Ref<User | null> = ref(null)
   const router = useRouter()
+
+  const registerPayload: Ref<RegisterRequest> = ref({
+    person: Person.initEmpty(),
+    school: School.initEmpty(),
+    email: '',
+    licenseId: '27e81539-bbab-40a4-a6d7-a2307ccb3151',
+    password: '',
+    password_confirmation: '',
+  })
+  const user: Ref<User | null> = ref(null)
 
   const clearAuthenticatedUser = (): void => {
     setUser(null)
@@ -38,6 +49,10 @@ export const useAccountStore = defineStore('auth', () => {
 
   const setIsGuest = (value: string): void => {
     window.localStorage.setItem('guest', value)
+  }
+
+  const setRegisterPayload = (data: RegisterRequest): void => {
+    registerPayload.value = data
   }
 
   const setUser = (data: User | null): void => {
@@ -88,7 +103,9 @@ export const useAccountStore = defineStore('auth', () => {
     resetPassword,
     sendPasswordResetLink,
     setIsGuest,
+    setRegisterPayload,
     setUser,
+    registerPayload,
     user,
   }
 })

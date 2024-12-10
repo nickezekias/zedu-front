@@ -7,6 +7,13 @@ const router = createRouter({
     {
       path: '/',
       component: GuestLayout,
+      children: [
+        {
+          path: 'register',
+          name: 'account.register',
+          component: () => import('@/app/features/account/register/IndexView.vue'),
+        },
+      ],
     },
   ],
 })

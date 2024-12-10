@@ -12,3 +12,11 @@
 .dbg-border {
   border: 1px solid red !important;
 }
+
+.dbg-border-blue {
+  border: 1px solid blue !important;
+}
+
+.dbg-border-green {
+  border: 1px solid green !important;
+}

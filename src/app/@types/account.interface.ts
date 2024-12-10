@@ -1,4 +1,5 @@
 import type Person from '../models/person.model'
+import type School from '../models/school.model'
 
 interface DBGetQueryFilter {
   sortBy: Array<string>
@@ -19,8 +20,9 @@ interface PasswordResetRequest {
 
 interface RegisterRequest {
   person: Person
+  school: School
   email: string
-  licenseSchoolId: string
+  licenseId: string
   password: string
   password_confirmation: string
 }

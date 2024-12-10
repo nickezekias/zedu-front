@@ -11,6 +11,14 @@ export default class Person {
   initials: string
   lastName: string
   phone: string
+  createdAt: string
+  updatedAt: string
+
+  public static readonly genders = {
+    MALE: 'MALE',
+    FEMALE: 'FEMALE',
+    OTHER: 'OTHER',
+  }
 
   constructor(
     id: string,
@@ -25,6 +33,8 @@ export default class Person {
     initials: string,
     lastName: string,
     phone: string,
+    createdAt: string,
+    updatedAt: string,
   ) {
     this.id = id
     this.age = age
@@ -38,6 +48,8 @@ export default class Person {
     this.initials = initials
     this.lastName = lastName
     this.phone = phone
+    this.createdAt = createdAt
+    this.updatedAt = updatedAt
   }
 
   static fromObject(data: {
@@ -53,6 +65,8 @@ export default class Person {
     initials: string
     lastName: string
     phone: string
+    createdAt: string
+    updatedAt: string
   }): Person {
     return new Person(
       data.id,
@@ -67,10 +81,12 @@ export default class Person {
       data.initials,
       data.lastName,
       data.phone,
+      data.createdAt,
+      data.updatedAt,
     )
   }
 
   static initEmpty(): Person {
-    return new Person('', 0, '', '', '', '', '', '', '', '', '', '')
+    return new Person('', 0, '', '', '', '', '', '', '', '', '', '', '', '')
   }
 }

@@ -1,1 +1,41 @@
-{}
+{
+  "errors": {
+    "validation": {
+      "email": "E-mail must be valid",
+      "invalidForm": "Invalid form, please fill out the form correctly",
+      "passwords": {
+        "minCount": "Your password must have at least 8 characters",
+        "notSame": "Passwords must be the same"
+      },
+      "requiredField": "This field is required"
+    }
+  },
+
+  "features": {
+    "account": {
+      "registerSuccessMessage": "Account created successfully"
+    }
+  },
+
+  "labels": {
+    "abbreviation": "Abbreviation",
+    "address": "Address",
+    "email": "Email",
+    "female": "Female",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "license": "License | Licenses",
+    "login": "Login",
+    "male": "Male",
+    "name": "Name",
+    "next": "Next",
+    "operationFailure": "Operation Failure",
+    "operationSuccess": "Operation Success",
+    "password": "Password",
+    "passwordConfirm": "Confirm Password",
+    "phone": "Phone",
+    "previous": "Previous",
+    "register": "Register",
+    "school": "School | Schools"
+  }
+}

@@ -54,10 +54,10 @@ function submit() {
         :isError="false" label="labels.phone" type="tel" />
 
       <NikkInputPassword v-model="state.user.password" errorHelpLabel="errors.validation.passwords.minCount"
-        id="password" :isError="false" label="labels.password" :toggleMask="false" />
+        id="password" :isError="false" label="labels.password" :toggleMask="true" />
 
       <NikkInputPassword v-model="state.password_confirmation" errorHelpLabel="errors.validation.passwords.minCount"
-        id="password-confirmation" :isError="false" label="labels.passwordConfirm" :toggleMask="false" />
+        id="password-confirmation" :isError="false" label="labels.passwordConfirm" :toggleMask="true" />
 
       <div class="py-6">
         <PrimeButton :label="$t('labels.next')" @click="() => { submit(); activateCallback('2') }" />

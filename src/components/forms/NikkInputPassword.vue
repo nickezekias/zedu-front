@@ -9,6 +9,7 @@ const props = defineProps<{
   id: string
   disabled?: boolean
   errorHelpLabel: string
+  feedback?: boolean
   label: string
   readonly?: boolean
   toggleMask: boolean
@@ -20,7 +21,7 @@ const props = defineProps<{
   <div>
     <FloatLabel variant="on">
       <Password v-model="model" :disabled="props.disabled" :invalid="props.isError" :inputId="props.id"
-        :readonly="props.readonly" toggleMask fluid />
+        :readonly="props.readonly" :toggleMask="props.toggleMask" :feedback="props.feedback" fluid />
       <label :class="props.isError ? 'nikk-invalid' : ''" :for="props.id">{{ $t(`${props.label}`) }}</label>
     </FloatLabel>
     <small v-if="props.isError" :id="`${props.id}-help`" class="nikk-invalid">

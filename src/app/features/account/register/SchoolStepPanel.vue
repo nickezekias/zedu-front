@@ -41,7 +41,11 @@ async function submit() {
         life: 5000
       })
 
-      router.push({ name: 'dashboard' })
+      if (accountStore.user && accountStore.user.isAdmin()) {
+        router.push({ name: 'admin.dashboard' })
+      } else {
+        router.push({ name: 'dashboard' })
+      }
     } else {
       toast.add({
         severity: "error",

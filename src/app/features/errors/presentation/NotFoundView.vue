@@ -1,4 +1,15 @@
 <script setup lang="ts">
+import { useAccountStore } from '@/stores/account.store';
+import { computed } from 'vue';
+
+const accountStore = useAccountStore()
+
+const getUrlName = computed(() => {
+  if (accountStore.user?.isAdmin()) {
+    return { name: "admin.dashboard" }
+  }
+  return { name: "dashboard" }
+})
 </script>
 
 <template>
@@ -7,7 +18,7 @@
       <div class="error-code">404</div>
       <div class="message">{{ $t('features.errors.404NotFound') }}</div>
       <!-- FIXME: redirect to dashboard or '/' if user is authenticated or not -->
-      <router-link :to="{ name: 'dashboard' }">
+      <router-link :to="getUrlName">
         <PrimeButton class="home-btn" size="large" :label="$t('labels.goHome')" />
       </router-link>
       <!-- <a href="/" class="home-btn">Go Home</a> -->

@@ -12,11 +12,12 @@ import UserAvatarMenu from '@/components/forms/user/UserAvatarMenu.vue';
     </template>
 
     <template #center>
-      <router-link :to="{ name: 'dashboard' }" activeClass="border-b border-primary" class="hidden md:flex py-2">
+      <router-link :to="{ name: 'admin.dashboard' }" activeClass="border-b border-primary" class="hidden md:flex py-2">
         <PrimeButton text plain class="" :label="$t('labels.dashboard')" />
       </router-link>
 
-      <router-link :to="{ name: 'students.index' }" activeClass="border-b border-primary" class="hidden md:flex py-2">
+      <router-link :to="{ name: 'admin.students.index' }" activeClass="border-b border-primary"
+        class="hidden md:flex py-2">
         <PrimeButton text plain class="" :label="$t('labels.student', 2)" />
       </router-link>
     </template>

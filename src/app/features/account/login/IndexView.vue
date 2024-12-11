@@ -12,7 +12,7 @@ import { getApiErrors } from '@/app/utils/helpers';
 import type { AxiosError } from 'axios';
 
 
-const authStore = useAccountStore()
+const accountStore = useAccountStore()
 const loading = ref(false)
 const router = useRouter()
 const route = useRoute()
@@ -30,16 +30,15 @@ async function submit(): Promise<void> {
     //FIXME: Implement form validation
     const isFormCorrect = true
     if (isFormCorrect) {
-      await authStore.login(state)
+      await accountStore.login(state)
       if (route.query.redirect) {
         router.push(`${route.query.redirect}`)
       } else {
-        /* if (authStore.user && authStore.user.isAdmin()) {
+        if (accountStore.user && accountStore.user.isAdmin()) {
           router.push({ name: 'admin.dashboard' })
         } else {
           router.push({ name: 'dashboard' })
-        } */
-        router.push({ name: 'dashboard' })
+        }
       }
     } else {
       toast.add({
@@ -80,7 +79,7 @@ async function submit(): Promise<void> {
           label="labels.email" type="email" />
 
         <NikkInputPassword v-model="state.password" errorHelpLabel="errors.validation.passwords.minCount" id="password"
-          :isError="false" label="labels.password" :toggleMask="false" />
+          :isError="false" label="labels.password" :toggleMask="true" :feedback="false" />
 
         <PrimeButton type="submit" :loading="loading" :label="$t('labels.login')" />
       </form>

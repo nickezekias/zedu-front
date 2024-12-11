@@ -26,19 +26,31 @@ const router = createRouter({
       ],
     },
     {
+      path: '/admin',
+      component: () => import('@/layouts/admin/IndexLayout.vue'),
+      children: [
+        {
+          path: 'dashboard',
+          name: 'admin.dashboard',
+          component: () => import('@/app/features/admin/dashboard/IndexView.vue'),
+          meta: { middleware: [auth, admin] },
+        },
+        {
+          path: 'students',
+          name: 'admin.students.index',
+          component: () => import('@/app/features/admin/student/presentation/IndexView.vue'),
+          meta: { middleware: [auth, admin] },
+        },
+      ],
+    },
+    {
       path: '/',
       component: () => import('@/layouts/admin/IndexLayout.vue'),
       children: [
         {
           path: 'dashboard',
           name: 'dashboard',
-          component: () => import('@/app/features/dashboard/IndexView.vue'),
-          meta: { middleware: [auth, admin] },
-        },
-        {
-          path: '/students',
-          name: 'students.index',
-          component: () => import('@/app/features/student/presentation/IndexView.vue'),
+          component: () => import('@/app/features/parent/dashboard/IndexView.vue'),
           meta: { middleware: [auth, admin] },
         },
       ],

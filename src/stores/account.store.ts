@@ -72,8 +72,8 @@ export const useAccountStore = defineStore('auth', () => {
   async function logout() {
     await accountService.logout()
     clearAuthenticatedUser()
-    if (router.currentRoute.value.name != 'auth.login') {
-      router.push({ name: 'auth.login' })
+    if (router.currentRoute.value.name != 'account.login') {
+      router.push({ name: 'account.login' })
     }
   }
 

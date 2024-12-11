@@ -6,7 +6,7 @@ export default class User {
   emailVerifiedAt: string
   isActive: boolean
   licenseSchoolId: string
-  password?: string
+  password: string
   person: Person
   roles: Array<string>
   createdAt: string

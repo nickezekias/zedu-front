@@ -43,7 +43,7 @@ export const useAccountStore = defineStore('auth', () => {
   }
 
   const setAuthenticatedUser = (data: User): void => {
-    setUser(data)
+    setUser(User.fromObject(data))
     setIsGuest('0')
   }
 

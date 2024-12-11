@@ -38,6 +38,7 @@
     "lastName": "Last Name",
     "license": "License | Licenses",
     "login": "Login",
+    "loginFailed": "Failed to sign in",
     "logout": "Logout",
     "male": "Male",
     "name": "Name",

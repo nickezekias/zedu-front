@@ -56,5 +56,9 @@
     "student": "Student | Students",
     "studentId": "Student ID",
     "unpaid": "Unpaid"
+  },
+  "messages": {
+    "credentialsNotFound": "These credentials do not match our records",
+    "noDataFound": "No data found"
   }
 }

@@ -20,6 +20,11 @@ import UserAvatarMenu from '@/components/forms/user/UserAvatarMenu.vue';
         class="hidden md:flex py-2">
         <PrimeButton text plain class="" :label="$t('labels.student', 2)" />
       </router-link>
+
+      <router-link :to="{ name: 'admin.timetables.index' }" activeClass="border-b border-primary"
+        class="hidden md:flex py-2">
+        <PrimeButton text plain class="" :label="$t('labels.timetable', 2)" />
+      </router-link>
     </template>
 
     <template #end>

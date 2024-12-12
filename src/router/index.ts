@@ -41,6 +41,12 @@ const router = createRouter({
           component: () => import('@/app/features/admin/student/presentation/IndexView.vue'),
           meta: { middleware: [auth, admin] },
         },
+        {
+          path: 'timetables',
+          name: 'admin.timetables.index',
+          component: () => import('@/app/features/admin/timetable/presentation/IndexView.vue'),
+          meta: { middleware: [auth, admin] },
+        },
       ],
     },
     {

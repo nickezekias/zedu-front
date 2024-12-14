@@ -3,12 +3,12 @@ import objService from '@/app/adapters/timetable.service'
 import { defineStore } from 'pinia'
 import Obj from '@/app/models/timetable.model'
 
-export const useStudentStore = defineStore('student', () => {
-  const objList: Ref<Array<Obj>> = ref([])
+export const useTimetableStore = defineStore('timetable', () => {
+  const objects: Ref<Array<Obj>> = ref([])
 
   async function create(obj: Obj) {
     const response = await objService.create(obj)
-    objList.value.push(Obj.fromObject(response.data.data))
+    objects.value.push(Obj.fromObject(response.data.data))
   }
 
   async function get(id: string) {
@@ -18,12 +18,12 @@ export const useStudentStore = defineStore('student', () => {
 
   async function getAll() {
     const response = await objService.getAll()
-    objList.value = response.data.data
+    objects.value = Obj.fromObjects(response.data.data)
   }
 
   async function update(obj: Obj) {
     const response = await objService.update(obj)
-    objList.value = objList.value.map((item) => {
+    objects.value = objects.value.map((item) => {
       if (item.id === obj.id) {
         return Obj.fromObject(response.data.data)
       }
@@ -33,8 +33,8 @@ export const useStudentStore = defineStore('student', () => {
 
   async function destroy(obj: Obj) {
     await objService.destroy(obj.id)
-    objList.value = objList.value.filter((item) => item.id !== obj.id)
+    objects.value = objects.value.filter((item) => item.id !== obj.id)
   }
 
-  return { objList, create, get, getAll, update, destroy }
+  return { objects, create, get, getAll, update, destroy }
 })
